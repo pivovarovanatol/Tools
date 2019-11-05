@@ -14,7 +14,7 @@ public class TestRegex {
 		final String strOperatorLineRegex = "\\s*# " + //zero or more leading spaces up to the '#' sign
 											"(?<operatorname>.*?)\\s*" + //required group, operator_name (i.e. 'PROJECT' or 'GROUP'), operator_name deemed to end when '(opId:...)' starts.  //?<operatorname>
 											// "\\(opId:(?:[LP]:)?(?<operatorid>\\d+)\\).*?\\s*" + //required group(2) is the operator_id with ignored group of :L: or :P:     //?<operatorid>
-											"\\(opId:(?:[LP]:)(?<operatorid>\\d+)\\).*?\\s*" + //required group(2) is the operator_id with ignored group of :L: or :P:     //?<operatorid>
+											"\\(opId:(?:[LP]:)?(?<operatorid>\\d+)\\).*?\\s*" + //required group(2) is the operator_id with ignored group of :L: or :P:     //?<operatorid>
 											//"(TABLE.used.cols:(?<tableusedcolls>.*?\\s*))?" + //optional table used colls  //?<tableusedcolls>
 											//"(TABLE.histo.cols:(?<tablehistocolls>.*?\\s*))?" + //optional table histo colls  //?<tablehistocolls>
 											//"(TABLE.key.joined.cols:(?<tablekeyjoinedcolls>.*?\\s*))?" + //optional table key joined colls  //?<tablekeyjoinedcolls>
@@ -42,7 +42,7 @@ public class TestRegex {
 		
 		//String operator_line = "    # TABLE SOPIBP00PIBP00DIBP00P (CALC VIEW) (0) (opId:L:2) TABLE used cols::  TABLE histo cols::  TABLE key joined cols::  input_size:-1 table_location: vadbzyo:30203|0  [LOGICAL] result_size:-1 rel_addr:0x00007f602886d570";
 	    
-	    String operator_line = "# PROJECT (opId:L:0) (opId:P:22) ((0, 10000000))  [LOGICAL] result_size:1 lowerbound_cost:1.08892035181818e-05 rel_addr:0x00004d005ed84a30  [PHYSICAL] cost:1.08892035181818e-05 physicalop_addr:0x00004d005ed89db0 at [apbhphana:30003|0]";
+	    String operator_line = "# PROJECT (opId:0) ((0, 2), (0, 1), (0, 10), (0, 9), (0, 6), (0, 5), (0, 4), (0, 3), (0, 7), (0, 8)) result_size:-1 addr:0x00007f3b4297d360 at [NULL|65535]";
 		
 		final Pattern patOperatorLine = Pattern.compile(strOperatorLineRegex); //,Pattern.DOTALL);
 		Matcher matchOperatorLine = patOperatorLine.matcher(operator_line);
