@@ -1,6 +1,8 @@
 package com.pivovarovanatol.Tools;
 
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -50,6 +52,9 @@ public class TestRegex {
 		System.out.println("String to match: " + operator_line);
 		System.out.println("Matches? " + matchOperatorLine.matches());
 
+		
+		Map<Integer, Boolean> hm = new HashMap();
+		
 		System.out.println("Found operatorname: " + matchOperatorLine.group("operatorname"));
 		System.out.println("Found operatorid: " + matchOperatorLine.group("operatorid"));
 		System.out.println("Found inputsize: " + matchOperatorLine.group("inputsize"));
