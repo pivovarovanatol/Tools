@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Scanner;
 
-public class CompareTwoStrings {
+public class CompareTwoFiles {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
